@@ -1,0 +1,106 @@
+body
+{
+    margin :0px;
+    background-color: #ffd1b3;
+    background-image: url("index.jpg") ;
+    background-attachment: fixed;
+    background-size: cover ;
+    background-repeat: no-repeat;
+    color : white ;
+
+}
+
+section{
+
+    width : 75%;
+    margin-left: 12%;
+}
+
+header{
+    margin : 0px ;
+    width: 75%;
+    height : 435px;
+    margin-left: 12%;
+    border-width: 0px;
+    border-color: black;
+    margin-bottom: 0%;
+    background-color: #5900b3 ;
+}
+
+#login
+{
+    font-size : 20px;
+    color : white ;
+    text-decoration : none;
+}
+
+#login:hover
+{
+    color : #ff4d4d;
+}
+
+.marge
+{
+    margin-left: 1em ;
+}
+
+
+#baniere
+{
+    width : 100% ;
+}
+
+#onglets
+{
+    font-size : 40px;
+    margin : -5px ;
+    margin-left: 12%;
+    border-width: 0px;
+    font : 60px ;
+    list-style-type : none;
+    margin-bottom: 0%;
+    background-color: #5900b3;
+}
+
+#onglets li
+{
+    float : left;
+    height : 55px; 
+    line-height: 50px;
+    background-color: #5900b3;
+    padding : 20px;
+}
+
+#onglets li.active
+{
+    text-decoration: underline;
+}
+
+#onglets a
+{
+    color : white;
+    text-decoration : none;
+    padding : 0px;
+}
+
+#onglets li:hover
+{
+    background : #ff4d4d;
+}
+
+input
+{
+    font-size : 20px;
+}
+
+textarea{
+    font-size : 20px;
+}
+
+p {
+    font-size : 25px;
+}
+
+span {
+    font-size : 20px;
+}
