@@ -44,6 +44,7 @@ if (isset($_POST['nom_user']) && (!empty($_POST['nom_user'])) && (isset($_POST['
          {
             $erreur = 'Compte non reconnu.';
          }
+      pg_close( $base );
   }
 else 
   {

@@ -54,6 +54,7 @@ if ((isset($_POST['nom_user']) && !empty($_POST['nom_user'])) && (isset($_POST['
         pg_query($base,$requete) ;
         session_start();
         $_SESSION['login'] = $user ;
+        pg_close( $base );
        }
        else 
        {

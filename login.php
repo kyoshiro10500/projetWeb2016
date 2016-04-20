@@ -29,9 +29,9 @@ include("miseEnPage.php");
     print"<form action=\"login_bdd.php\" method=\"post\">\n";
     print"<br/>\n" ;
     print"<p>Nom d'utilisateur</p>" ;
-    print"<textarea cols=\"25\" rows=\"1\" name=\"nom_user\"></textarea></br></br>\n" ;
+    print"<input type=\"text\" name=\"nom_user\"/></br></br>\n" ;
     print"<p>Mot de passe</p>" ;
-    print"<textarea cols=\"25\" rows=\"1\" name=\"password_user\"></textarea></br></br>\n" ;
+    print"<input type=\"password\" name=\"password_user\"/></br></br>\n" ;
     print"<input type=\"submit\" value=\"Envoyer\" name=\"bouton1\"/>\n";
     print("</br></br></br></br>") ;
 
