@@ -31,14 +31,10 @@
     print"<form action=\"EnvoiMessage.php\" method=\"post\">\n";
     print"<br/>\n" ;
     print"<p>Sujet</p>" ;
-    print"<textarea cols=\"25\" rows=\"1\" name=\"sujet\"></textarea></br></br>\n" ;
+    print"<input type=\"text\" name=\"sujet\"><br/><br/>\n" ;
     print"<p>Message</p>" ;
-    print"<textarea cols=\"100\" rows=\"8\" name=\"text\"></textarea></br></br>\n" ;
+    print"<textarea cols=\"100\" rows=\"8\" name=\"text\"></textarea><br/><br/>\n" ;
     print"<input type=\"submit\" value=\"Envoyer\" name=\"bouton1\"/>\n";
-    print("</br></br></br></br>") ;
-
-    //rajouter un champs hidden qui passe le nom de celui qui envoie $nom_envoi
-
     print"</form>\n";
     print"</section>\n" ;
 

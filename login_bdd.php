@@ -54,7 +54,7 @@ $erreur = 'Au moins un des champs est vide.';
   {
     print"<section>" ;
     print"$erreur" ;
-    print"</br>" ;
+    print"<br/>" ;
     print"<a href=\"login.php\" id=\"login\">Retour au login</a>\n" ;
     print"</section>" ;
     pied() ;

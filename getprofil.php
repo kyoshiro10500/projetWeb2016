@@ -14,22 +14,23 @@ function getprofil($user)
 			print"<span>\n" ;
 			print"Nom d'utilisateur :\n" ;
 			print $user ;
-			print"</br>" ;
+			print"<br/>" ;
 			print"Adresse mail :\n" ;
 			print $tupleCourant['mail_user'] ;
 			print"</span>\n" ;
+			print"<br/>" ;
 		}
 		else
 		{
 			print"Erreur de récupération des informations\n";
-			print"</br>" ;
+			print"<br/>" ;
 			print"<a href=\"profil.php\" class=\"login\">Redirection</a>\n" ;
 		}
 	   }
 	   else
 	   {
 		    print"Erreur de récupération des informations\n";
-			print"</br>" ;
+			print"<br/>" ;
 			print"<a href=\"profil.php\" class=\"login\">Redirection</a>\n" ;
 	   }
            pg_close( $base );

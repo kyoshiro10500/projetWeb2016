@@ -3,6 +3,7 @@
   include("miseEnPage.php"); 
   include("affichelogin.php") ;
   include("getprofil.php") ;
+  include("getpanel.php") ;
   enTete() ;
     print"<header>\n" ;
     print"<img id=\"baniere\" src=\"banière.jpg\" alt=\"banière twich\" >\n" ;
@@ -28,17 +29,14 @@
     print"<section>\n" ;
     if(!isset($_SESSION['login']))
     {
-        print"</br>" ;
-        print"</br>" ;
-        print"</br>" ;
-        print"</br>" ;
-        print"<span>Veuillez vous connecter</span>" ;
+        print"<section>\n" ;
+        print"<span>Veuillez vous connecter</span>\n" ;
+        print"</section>\n" ;
     }
     else
     {
-        print"</br>" ;
-        print"</br>" ;
         getprofil($_SESSION['login']) ;
+        getpanel($_SESSION['login']) ;
     }
     print"</section>\n" ;
     pied() ; 

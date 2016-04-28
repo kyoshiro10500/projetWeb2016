@@ -29,14 +29,11 @@ include("miseEnPage.php");
     print"<form action=\"login_bdd.php\" method=\"post\">\n";
     print"<br/>\n" ;
     print"<p>Nom d'utilisateur</p>" ;
-    print"<input type=\"text\" name=\"nom_user\"/></br></br>\n" ;
+    print"<input type=\"text\" name=\"nom_user\"/><br/><br/>\n" ;
     print"<p>Mot de passe</p>" ;
-    print"<input type=\"password\" name=\"password_user\"/></br></br>\n" ;
+    print"<input type=\"password\" name=\"password_user\"/><br/><br/>\n" ;
     print"<input type=\"submit\" value=\"Envoyer\" name=\"bouton1\"/>\n";
-    print("</br></br></br></br>") ;
-
-    //rajouter un champs hidden qui passe le nom de celui qui envoie $nom_envoi
-
+    print("<br/><br/><br/><br/>") ;
     print"</form>\n";
     print"</section>\n" ;
 
