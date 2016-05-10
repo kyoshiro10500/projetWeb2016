@@ -4,6 +4,7 @@
   include("affichelogin.php") ;
   include("getprofil.php") ;
   include("getpanel.php") ;
+  include("script.php") ;
   enTete() ;
     print"<header>\n" ;
     print"<img id=\"baniere\" src=\"banière.jpg\" alt=\"banière twich\" >\n" ;
@@ -36,6 +37,7 @@
     else
     {
         getprofil($_SESSION['login']) ;
+        script() ;
         getpanel($_SESSION['login']) ;
     }
     print"</section>\n" ;

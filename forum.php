@@ -24,9 +24,19 @@ session_start();
     print"</li>\n" ;
     print"</ul>\n" ;
     print"</header>\n" ;
-    print"<section>\n" ;
+    print"<br/>\n" ;
+    print"<ul id=\"forum\">\n" ;
+    print"<li>\n" ;
+    print"Présentation\n" ;
+    print"</li>\n" ;
+    print"<li>\n" ;
+    print"Règles générales\n" ;
+    print"</li>\n";
+    print"<li>\n";
+    print"Discussions générales\n" ;
+    print"</li>\n";
+    print"</ul>\n" ;
 
-    print"</section>\n" ;
 
 pied() ; 
 ?>

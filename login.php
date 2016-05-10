@@ -3,6 +3,7 @@
 //nom_user, password_user
 include("miseEnPage.php"); 
   include("affichelogin.php") ;
+  include("script.php") ;
   enTete() ;
     print"<header>\n" ;
     print"<img id=\"baniere\" src=\"banière.jpg\" alt=\"banière twich\" >\n" ;
@@ -26,12 +27,13 @@ include("miseEnPage.php");
     print"</ul>\n" ;
     print"</header>\n" ;
     print"<section>\n" ;
-    print"<form action=\"login_bdd.php\" method=\"post\">\n";
+    script() ;
+    print"<form action=\"login_bdd.php\" method=\"post\" onsubmit=\"return verifForm1(this)\">\n";
     print"<br/>\n" ;
     print"<p>Nom d'utilisateur</p>" ;
-    print"<input type=\"text\" name=\"nom_user\"/><br/><br/>\n" ;
+    print"<input type=\"text\" name=\"nom_user\" onblur=\"verifPseudo(this)\"/><br/><br/>\n" ;
     print"<p>Mot de passe</p>" ;
-    print"<input type=\"password\" name=\"password_user\"/><br/><br/>\n" ;
+    print"<input type=\"password\" name=\"password_user\" onblur=\"verifmdp(this)\"/><br/><br/>\n" ;
     print"<input type=\"submit\" value=\"Envoyer\" name=\"bouton1\"/>\n";
     print("<br/><br/><br/><br/>") ;
     print"</form>\n";
