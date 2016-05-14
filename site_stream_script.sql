@@ -1,15 +1,15 @@
 CREATE DATABASE site_stream_grpac2;
 
-CREATE TABLE utilisateur(
+CREATE TABLE profil(
 id_user INT PRIMARY KEY NOT NULL,
-pseudo_user varchar(32) NOT NULL,
+nom_user varchar(32) NOT NULL,
 mail_user varchar(50),
-mdp_user varchar(30) NOT NULL,
+password_user varchar(30) NOT NULL,
 id_img_user int,
 desc_user varchar(500),
 genre_user int,
 age_user int,
-type_user int NOT NULL DEFAULT 0,
+lvl_user int NOT NULL DEFAULT 0,
 signature_membre varchar(140),
 localisation_membre varchar(50),
 membre_inscrit int NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE moderateur(
 id_mod int,
 privilege int CHECK (privilege=1 OR privilege=2),
 CONSTRAINT fk_modo
-FOREIGN KEY (id_mod) REFERENCES utilisateur(id_user)
+FOREIGN KEY (id_mod) REFERENCES profil(id_user)
 );
 
 CREATE TABLE emission(
