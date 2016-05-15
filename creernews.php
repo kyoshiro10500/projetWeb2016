@@ -1,6 +1,6 @@
 <?php
-	$nom = $_POST['nomnews'] ;
-	$description = $_POST['description'] ;
+	$nom = pg_escape_string($_POST['nomnews']) ;
+	$description = pg_escape_string($_POST['description']) ;
 	$jour = date('d') ;
 	$mois = date('m') ;
 	$annee = date('Y') ;

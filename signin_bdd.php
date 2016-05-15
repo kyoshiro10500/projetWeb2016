@@ -36,9 +36,9 @@ if ((isset($_POST['nom_user']) && !empty($_POST['nom_user'])) && (isset($_POST['
       {
         $base = pg_connect( "host=localhost port=5000 dbname=Site user=postgres password=Site" );
       }
-    $user = $_POST['nom_user'];
-    $mdp = $_POST['password_user'] ;
-    $mail =$_POST['mail_user'] ;
+    $user = pg_escape_string($_POST['nom_user']);
+    $mdp = pg_escape_string($_POST['password_user']) ;
+    $mail =pg_escape_string($_POST['mail_user']) ;
 
     $requete = "SELECT * FROM profil WHERE nom_user='$user' ;";
     $reqt = pg_query($base,$requete) ;

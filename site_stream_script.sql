@@ -1,4 +1,5 @@
-﻿/*CREATE DATABASE public;*/
+﻿DROP DATABASE IF EXISTS Site ;
+CREATE DATABASE Site;
 
 
 
@@ -13,13 +14,14 @@ genre_user int,
 age_user int,
 lvl_user int NOT NULL DEFAULT 0,
 signature_membre varchar(140),
-localisation_membre varchar(50)/*,
-membre_inscrit int NOT NULL,
-membre_last_visit int NOT NULL,
-membre_post int NOT NULL*/);
+localisation_membre varchar(50),
+membre_inscrit date NOT NULL,
+membre_last_visit date NOT NULL,
+membre_post int NOT NULL,
+id_ban int);
 
 /*ces infos doivent etre donnees par le client avant la création de la base*/
-INSERT INTO profil(id_user,nom_user,mail_user,password_user,id_img_user,lvl_user) VALUES ('1','Admin1','victorperson10@hotmail.fr','Admin1','1','2') ;  
+INSERT INTO profil(id_user,nom_user,mail_user,password_user,id_img_user,lvl_user,membre_post,membre_inscrit,membre_last_visit) VALUES ('1','Admin1','victorperson10@hotmail.fr','Admin1','1','2','0','2016-05-15','2016-05-15') ;  
 
 CREATE TABLE forum_categorie(
 id_cat int primary key not null,

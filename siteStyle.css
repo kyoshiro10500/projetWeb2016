@@ -11,9 +11,13 @@ body
 }
 
 section{
-
+    font-size : 20px;
     width : 75%;
     margin-left: 12%;
+}
+
+span {
+    font-size : 20px;
 }
 
 header{
@@ -116,6 +120,4 @@ p {
     font-size : 25px;
 }
 
-span {
-    font-size : 20px;
-}
+

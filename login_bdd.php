@@ -29,8 +29,8 @@ if (isset($_POST['nom_user']) && (!empty($_POST['nom_user'])) && (isset($_POST['
 
    $base=pg_connect("host=localhost port=5000 dbname=Site user=postgres password=Site"); 
    // on teste si le couple username/password est bien dans la base de donnee
-   $user = $_POST['nom_user'];
-   $mdp = $_POST['password_user'] ;
+   $user = pg_escape_string($_POST['nom_user']);
+   $mdp = pg_escape_string($_POST['password_user']) ;
    $requete="SELECT * FROM profil WHERE nom_user = '$user' AND password_user = '$mdp' ;";
    $reqt=pg_query($base,$requete) ;
    $nb_tuples=pg_num_rows($reqt) ;

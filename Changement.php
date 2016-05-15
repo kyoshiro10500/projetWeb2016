@@ -28,7 +28,7 @@
     $nom_user = $_SESSION['login'] ;
     if(isset($_POST['newnom']) && !empty($_POST['newnom']))
     {
-    	$newnom = $_POST['newnom'] ;
+    	$newnom = pg_escape_string($_POST['newnom']) ;
     	$requete="SELECT * FROM profil WHERE nom_user='$newnom' ;";
 		$reponse =pg_query($base,$requete) ;
 		if(pg_num_rows($reponse)==0)
@@ -45,7 +45,7 @@
     }
     if(isset($_POST['newmail']) && !empty($_POST['newmail']))
     {
-    	$newmail = $_POST['newmail'] ;
+    	$newmail = pg_escape_string($_POST['newmail']) ;
     	$requete="SELECT * FROM profil WHERE mail_user='$newmail' ;";
 		$reponse =pg_query($base,$requete) ;
 		if(pg_num_rows($reponse)==0)
@@ -60,9 +60,9 @@
     }
     if(isset($_POST['newmdp']) && !empty($_POST['newmdp']) && isset($_POST['mdp']) && !empty($_POST['mdp']) && isset($_POST['newmdpverif']) && !empty($_POST['newmdpverif']) )
     {
-    	$mdp = $_POST['mdp'] ;
-    	$newmdp = $_POST['newmdp'] ;
-    	$newmdpverif = $_POST['newmdpverif'] ;
+    	$mdp = pg_escape_string($_POST['mdp']) ;
+    	$newmdp = pg_escape_string($_POST['newmdp']) ;
+    	$newmdpverif = pg_escape_string($_POST['newmdpverif']) ;
     	if($newmdp == $newmdp)
     	{
     		$requete="SELECT * FROM profil WHERE nom_user = '$nom_user' AND password_user = '$mdp' ;";
