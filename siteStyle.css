@@ -36,6 +36,52 @@ textarea {
 }
 
 
+
+.nopuce
+{
+    list-style-type:none;
+}
+
+#infos
+{
+    padding-left: 20px;
+    background-color: #5900b3 ;
+    border-style: solid;
+    border-left : none;
+    border-top: none;
+    border-bottom: none;
+    width : 25%;
+    height: 3200px;
+    position:absolute;
+    onglets: 10px;
+    border-color :#b566ff;;
+}
+
+#panel
+{
+    border-color :#b566ff;
+    padding-bottom : 40px;
+    border-bottom-right-radius: 50px;
+    width : 47%;
+    border-style: solid;
+    border-left : none;
+    border-top: none;
+    border-right :none ;
+    padding-left: 450px;
+    font-size : 20px;
+    color : white ;
+    text-decoration : none;
+    list-style-type:none;
+    margin : -5px ;
+    margin-left: 12%;
+    line-height : 30px;
+}
+
+#panel h1
+{
+    text-decoration: underline;
+}
+
 #forum
 {
     font-size : 20px;
@@ -120,4 +166,30 @@ p {
     font-size : 25px;
 }
 
+#programmation
+{
+    list-style-type : none;
+}
 
+#programmation li
+{
+    padding-top: 10px ;
+    padding-bottom: 10px ;
+    border-style: double;
+    margin-top: 40px ;
+    background-color: #ffd9b3;
+    color : black;
+    border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-top-left-radius: 100px;
+}
+
+.centrage {
+    text-align: center;
+}
+
+.underl{
+    text-align: center;
+    text-decoration: underline;
+}

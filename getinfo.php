@@ -5,10 +5,10 @@
     	$requete="SELECT * FROM news ORDER BY id_news;";
     	$reqt=pg_query($base,$requete) ;
     	$tuple_courant = pg_fetch_assoc($reqt) ;
-    	print"<ul>" ;
+    	print"<ul id=\"programmation\">" ;
     	while($tuple_courant)
     	{
-    		print"<li>\n" ;
+    		print"<li class=\"centrage\">\n" ;
     		$nom_news = $tuple_courant['nom_news'] ;
     		$decrip_news = $tuple_courant['descrip_news'] ;
     		$date = $tuple_courant['date_news'] ;

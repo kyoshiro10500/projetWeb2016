@@ -8,10 +8,9 @@ function getnews()
     print"<ul>\n" ;
     while($tuples_courant)
     {
-        print"<li>\n" ;
+        print"<li class=\"nopuce\">\n" ;
         $nomnews = $tuples_courant['nom_news'] ;
-        $id_news = $tuples_courant['id_news'] ;
-        print"$nomnews  $id_news\n" ;
+        print"$nomnews\n" ;
         print"</li>\n" ;
         $tuples_courant = pg_fetch_assoc($reqt) ;
     }

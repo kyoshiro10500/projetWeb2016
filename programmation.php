@@ -26,6 +26,7 @@
     print"</ul>\n" ;
     print"</header>\n" ;
     print"<section>\n" ;
+    date_default_timezone_set('Europe/Paris') ;
     getprogrammation(date('W'),date('N')) ;
     print"</section>\n" ;
 

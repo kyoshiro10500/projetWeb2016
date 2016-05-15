@@ -10,7 +10,6 @@ mail_user varchar(50),
 password_user varchar(30) NOT NULL,
 id_img_user int,
 desc_user varchar(500),
-genre_user int,
 age_user int,
 lvl_user int NOT NULL DEFAULT 0,
 signature_membre varchar(140),
@@ -21,7 +20,7 @@ membre_post int NOT NULL,
 id_ban int);
 
 /*ces infos doivent etre donnees par le client avant la création de la base*/
-INSERT INTO profil(id_user,nom_user,mail_user,password_user,id_img_user,lvl_user,membre_post,membre_inscrit,membre_last_visit) VALUES ('1','Admin1','victorperson10@hotmail.fr','Admin1','1','2','0','2016-05-15','2016-05-15') ;  
+INSERT INTO profil(id_user,nom_user,mail_user,password_user,id_img_user,lvl_user,membre_post,membre_inscrit,membre_last_visit,id_ban,age_user) VALUES ('1','Admin1','victorperson10@hotmail.fr','Admin1','1','2','0','2016-05-15','2016-05-15','0','20') ;  
 
 CREATE TABLE forum_categorie(
 id_cat int primary key not null,
@@ -89,5 +88,5 @@ FOREIGN KEY (id_cast) REFERENCES emission(id_cast)) ;
 CREATE TABLE news(
 id_news int PRIMARY KEY NOT NULL ,
 nom_news varchar(100),
-descrip_news varchar(250);
-date_news date ;)
+descrip_news varchar(250),
+date_news date) ;

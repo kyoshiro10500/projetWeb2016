@@ -195,6 +195,17 @@ function script2()
                         return false;
                     }
                 }
+                function verifForm6(f)
+                {
+                    var nomuserOk = verifSujet(f.nomuser);
+                    if(nomuserOk)
+                        return true;
+                    else
+                    {
+                        alert(\"Veuillez remplir correctement tous les champs\");
+                        return false;
+                    }
+                }
            </script>\n") ;
 }
 

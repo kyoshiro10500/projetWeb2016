@@ -38,6 +38,8 @@ include("affichelogin.php") ;
     print"<input type=\"password\" name=\"password_user\" onblur=\"verifmdp(this)\"/><br/><br/>\n" ;
     print"<p>Confirmation du mot de passe</p>" ;
     print"<input type=\"password\" name=\"confirmation_password_user\" onblur=\"verifmdp(this)\"/><br/><br/>\n" ;
+    print"<p>Age</p>" ;
+    print"<input type=\"number\" name=\"age\" step=\"1\" value=\"1\" min=\"1\" max=\"100\"><br/><br/>\n" ;
     print"<input type=\"submit\" value=\"Envoyer\" name=\"bouton1\"/>\n";
     print("<br/><br/><br/><br/>") ;
     print"</form>\n";

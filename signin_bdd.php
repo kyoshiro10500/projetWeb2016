@@ -47,10 +47,15 @@ if ((isset($_POST['nom_user']) && !empty($_POST['nom_user'])) && (isset($_POST['
        $nbTuples = pg_num_rows($reqt) ;
        if($nbTuples == 0)
        {
+        date_default_timezone_set('Europe/Paris') ;
         $requete = "SELECT * FROM profil ;" ;
         $reqt = pg_query($base,$requete) ;
         $nbTuples = pg_num_rows($reqt) ;
-        $requete = "INSERT INTO profil(id_user,lvl_user,nom_user,password_user,mail_user) VALUES($nbTuples+1,0,'$user','$mdp','$mail') ;";
+        $jour = date('d');
+        $mois = date('m'); 
+        $annee = date('o');
+        $age = $_POST['age'] ;
+        $requete = "INSERT INTO profil(id_user,lvl_user,nom_user,password_user,mail_user,membre_post,membre_inscrit,membre_last_visit,id_img_user,id_ban,age_user) VALUES($nbTuples+1,'0','$user','$mdp','$mail','0','$annee-$mois-$jour','$annee-$mois-$jour','1','0','$age') ;";
         pg_query($base,$requete) ;
         session_start();
         $_SESSION['login'] = $user ;

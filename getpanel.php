@@ -1,6 +1,7 @@
 <?php
 	function getpanel($user)
 	{
+        date_default_timezone_set('Europe/Paris') ;
 		$semaine = date('W') ;
 		$base=pg_connect("host=localhost port=5000 dbname=Site user=postgres password=Site"); 
 		$requete="SELECT lvl_user FROM profil WHERE nom_user='$user' ;";
@@ -11,7 +12,7 @@
 			if($nbTuples>0)
 			{
 				$tupleCourant = pg_fetch_assoc($reponse) ;
-				print"<section>\n" ;
+                print"<section id=\"panel\">\n";
 				print"<h1>Changement des informations du compte</h1>\n" ;
 				print"<form action=\"Changement.php\" method=\"post\" onsubmit=\"return verifForm3(this)\">\n";
     			print"Changement de nom d'utilisateur : (6 caractères minimum)<br/>\n" ;
@@ -37,17 +38,45 @@
 				if($tupleCourant['lvl_user']>=1)
 				{
 					//panel des moderateurs (l'admin est aussi modo)
-					print"<section>\n" ;
+					print"<section id=\"panel\">\n" ;
 					print"<h1>Gestion des utilisateurs</h1>\n" ;
-    				print"</section>\n" ;
+                    print"Banissement\n" ;
+                    print"<form action=\"Bannir.php\" method=\"post\" onsubmit=\"return verifForm6(this)\">\n";
+                    print"<span>Nom de l'utilisateur à bannir : (6 caractères minimum)</span><br/>\n" ;
+                    print"<input type=\"text\" name=\"nomuser\" onblur=\"verifSujet(this)\"><br/>\n" ;
+                    print"<input type=\"submit\" value=\"Bannir\" name=\"bouton1\"/>\n";
+                    print"</form>\n";
+                    if($tupleCourant['lvl_user']==1)
+                    {
+                        print"</section>\n" ;
+                    }
 				}
 				if($tupleCourant['lvl_user']==2)
 				{
 					//panel admin 
+                    print"</br>\n" ;
+                    print"</br>\n" ;
+                    print"Monter un utilisateur de grade\n" ;
+                    print"</br>\n" ;
+                    print"<form action=\"elevergrade.php\" method=\"post\" onsubmit=\"return verifForm6(this)\">\n";
+                    print"<span>Nom de l'utilisateur à augmenter : (6 caractères minimum)</span><br/>\n" ;
+                    print"<input type=\"text\" name=\"nomuser\" onblur=\"verifSujet(this)\"><br/>\n" ;
+                    print"<input type=\"submit\" value=\"Monter en grade\" name=\"bouton1\"/>\n";
+                    print"</form>\n";
+                    print"</br>\n" ;
+                    print"</br>\n" ;
+                    print"Baisser un utilisateur de grade\n" ;
+                    print"</br>\n" ;
+                    print"<form action=\"baissergrade.php\" method=\"post\" onsubmit=\"return verifForm6(this)\">\n";
+                    print"<span>Nom de l'utilisateur à destituer : (6 caractères minimum)</span><br/>\n" ;
+                    print"<input type=\"text\" name=\"nomuser\" onblur=\"verifSujet(this)\"><br/>\n" ;
+                    print"<input type=\"submit\" value=\"Baisser en grade\" name=\"bouton1\"/>\n";
+                    print"</form>\n";
+                    print"</section>\n" ;
 					include("getnews.php") ;
 					include("getprogramme.php") ;
 					include("getemission.php") ;
-					print"<section>\n" ;
+					print"<section id=\"panel\">\n" ;
 					print"<h1>Gestion des émissions (au maximum 20)</h1>\n" ;
 					getemission() ;
 					script2() ;
@@ -59,6 +88,7 @@
     				print"<input type=\"text\" name=\"description\" onblur=\"verifDescription(this)\"><br/>\n" ;
     				print"<input type=\"submit\" value=\"Creer\" name=\"bouton1\"/>\n";
     				print"</form>\n";
+                    print"</br>\n" ;
     				print"Suppression d'émission\n" ;
     				print"<form action=\"SupprimerEmission.php\" method=\"post\" onsubmit=\"return verifForm5(this)\">\n";
     				print"<span>Nom de l'émission :</span><br/>" ;
@@ -66,7 +96,7 @@
     				print"<input type=\"submit\" value=\"Supprimer\" name=\"bouton1\"/>\n";
     				print"</form>\n";
     				print"</section>\n" ;
-    				print"<section>\n" ;
+    				print"<section id=\"panel\">\n" ;
 					print"<h1>Gestion du programme</h1>\n" ;
 					getprogramme() ;
     				print"Création de programme : (semaine actuelle n°$semaine)\n" ;
@@ -82,6 +112,7 @@
     				print"<input type=\"number\" name=\"heurefin\" step=\"1\" value=\"1\" min=\"1\" max=\"24\"><br/>\n" ;
     				print"<input type=\"submit\" value=\"Creer\" name=\"bouton1\"/>\n";
     				print"</form>\n";
+                    print"</br>\n";
     				print"Suppression de programme : (semaine actuelle n°$semaine )\n" ;
 					print"<form action=\"supprimerprogramme.php\" method=\"post\">\n";
     				print"<span>Semaine concernée :</span><br/>\n" ;
@@ -94,7 +125,7 @@
     				print"<input type=\"submit\" value=\"Supprimer\" name=\"bouton1\"/>\n";
     				print"</form>\n";
     				print"</section>\n" ;
-    				print"<section>\n" ;
+    				print"<section id=\"panel\">\n" ;
 					print"<h1>Gestion des news</h1>\n" ;
 					getnews() ;
 					print"Création de news (10 max : supprimera la plus ancienne)\n" ;
@@ -105,6 +136,7 @@
     				print"<input type=\"text\" name=\"description\" onblur=\"verifDescription(this)\"><br/>\n" ;
     				print"<input type=\"submit\" value=\"Creer\" name=\"bouton1\"/>\n";
     				print"</form>\n";
+                    print"</br>\n";
     				print"Modification de news\n" ;
     				print"<form action=\"ModifierNews.php\" method=\"post\" onsubmit=\"return verifForm4(this)\">\n";
     				print"<span>Nom de la news :</span><br/>" ;

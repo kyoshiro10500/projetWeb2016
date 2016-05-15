@@ -8,7 +8,7 @@ function getemission()
     print"<ul>\n" ;
     while($tuples_courant)
     {
-        print"<li>\n" ;
+        print"<li class=\"nopuce\">\n" ;
         $nomEmission = $tuples_courant['nom_cast'] ;
         print"$nomEmission\n" ;
         print"</li>\n" ;
