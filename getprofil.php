@@ -11,6 +11,8 @@ function getprofil($user)
 		if($nbTuples>0)
 		{
 			$tupleCourant = pg_fetch_assoc($reponse) ;
+			print"<section>\n" ;
+			print"<h1>Informations de l'utilisateur</h1>\n" ;
 			print"<span>\n" ;
 			print"Nom d'utilisateur :\n" ;
 			print $user ;
@@ -18,7 +20,7 @@ function getprofil($user)
 			print"Adresse mail :\n" ;
 			print $tupleCourant['mail_user'] ;
 			print"</span>\n" ;
-			print"<br/>" ;
+			print"</section>\n" ;
 		}
 		else
 		{

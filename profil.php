@@ -27,7 +27,6 @@
     print"</li>\n" ;
     print"</ul>\n" ;
     print"</header>\n" ;
-    print"<section>\n" ;
     if(!isset($_SESSION['login']))
     {
         print"<section>\n" ;
@@ -40,6 +39,5 @@
         script() ;
         getpanel($_SESSION['login']) ;
     }
-    print"</section>\n" ;
     pied() ; 
 ?>

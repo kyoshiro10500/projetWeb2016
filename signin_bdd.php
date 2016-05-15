@@ -50,7 +50,7 @@ if ((isset($_POST['nom_user']) && !empty($_POST['nom_user'])) && (isset($_POST['
         $requete = "SELECT * FROM profil ;" ;
         $reqt = pg_query($base,$requete) ;
         $nbTuples = pg_num_rows($reqt) ;
-        $requete = "INSERT INTO profil VALUES($nbTuples+1,0,'$user','$mdp','$mail') ;";
+        $requete = "INSERT INTO profil(id_user,lvl_user,nom_user,password_user,mail_user) VALUES($nbTuples+1,0,'$user','$mdp','$mail') ;";
         pg_query($base,$requete) ;
         session_start();
         $_SESSION['login'] = $user ;

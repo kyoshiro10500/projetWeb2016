@@ -2,6 +2,7 @@
   <?php //page d'accueil du site où se trouve le stream, le chat et les infos & anecdotes
   include("miseEnPage.php"); 
   include("affichelogin.php") ;
+  include("getinfo.php") ;
   session_start();
   enTete() ;
     print"<header>\n" ;
@@ -30,6 +31,8 @@
     print"<iframe src=\"https://player.twitch.tv/?channel=ogamingsc2\" frameborder=\"0\" scrolling=\"no\" height=\"500\" width=\"800\"></iframe>\n" ;
     print"<iframe src=\"https://www.twitch.tv/ogamingsc2/chat?popout=\" frameborder=\"0\" scrolling=\"no\" height=\"500\" width=\"382\"></iframe>\n" ;
     print"</section>" ;
-    //rajouter une fonction getinfo.php() qui va chercher les petits messages de la page d'accueil.
+    print"<section>" ;
+    getinfo() ;
+    print"</section>" ;
 pied() ; 
 ?>

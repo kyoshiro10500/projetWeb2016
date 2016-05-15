@@ -147,11 +147,47 @@ function script2()
                         return true;
                     }
                 }
+                function verifDescription(champ)
+                {
+                    if(champ.value.lenght > 250 || champ.value.length < 10)
+                    {
+                        surligne(champ, true);
+                        return false;
+                    }
+                    else
+                    {
+                        surligne(champ, false);
+                        return true;
+                    }
+                }
                 function verifForm1(f)
                 {
                     var SujetOk = verifSujet(f.sujet);
                     var TextOk = verifText(f.text);
                     if(SujetOk && TextOk)
+                        return true;
+                    else
+                    {
+                        alert(\"Veuillez remplir correctement tous les champs\");
+                        return false;
+                    }
+                }
+                function verifForm4(f)
+                {
+                    var NomemissionOk = verifSujet(f.nomEmission);
+                    var DescriptionOk = verifDescription(f.description);
+                    if(NomemissionOk && DescriptionOk)
+                        return true;
+                    else
+                    {
+                        alert(\"Veuillez remplir correctement tous les champs\");
+                        return false;
+                    }
+                }
+                function verifForm5(f)
+                {
+                    var NomemissionOk = verifSujet(f.nomEmission);
+                    if(NomemissionOk)
                         return true;
                     else
                     {

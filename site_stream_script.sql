@@ -1,4 +1,6 @@
-CREATE DATABASE site_stream_grpac2;
+﻿/*CREATE DATABASE public;*/
+
+
 
 CREATE TABLE profil(
 id_user INT PRIMARY KEY NOT NULL,
@@ -11,10 +13,13 @@ genre_user int,
 age_user int,
 lvl_user int NOT NULL DEFAULT 0,
 signature_membre varchar(140),
-localisation_membre varchar(50),
+localisation_membre varchar(50)/*,
 membre_inscrit int NOT NULL,
 membre_last_visit int NOT NULL,
-membre_post int NOT NULL);
+membre_post int NOT NULL*/);
+
+/*ces infos doivent etre donnees par le client avant la création de la base*/
+INSERT INTO profil(id_user,nom_user,mail_user,password_user,id_img_user,lvl_user) VALUES ('1','Admin1','victorperson10@hotmail.fr','Admin1','1','2') ;  
 
 CREATE TABLE forum_categorie(
 id_cat int primary key not null,
@@ -70,11 +75,17 @@ nom_cast varchar(100),
 descrip_cast varchar(250));
 
 CREATE TABLE programme(
-id_prog int PRIMARY KEY NOT NULL,
-name_cast varchar(100)[5],
-date_cast date[5]);
+id_semaine int,
+id_jour int,
+id_heure_debut int,
+id_heure_fin int,
+id_cast int,
+PRIMARY KEY (id_semaine,id_jour,id_heure_debut,id_heure_fin),
+CONSTRAINT fk_cast
+FOREIGN KEY (id_cast) REFERENCES emission(id_cast)) ;
 
-CREATE TABLE emission_prog(
-id_cast int REFERENCES emission(id_cast) ON UPDATE CASCADE ON DELETE CASCADE,
-id_prog int REFERENCES programme(id_prog) ON UPDATE CASCADE,
-CONSTRAINT emission_prog_pkey PRIMARY KEY (id_cast,id_prog));
+CREATE TABLE news(
+id_news int PRIMARY KEY NOT NULL ,
+nom_news varchar(100),
+descrip_news varchar(250);
+date_news date ;)

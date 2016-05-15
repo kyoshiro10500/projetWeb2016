@@ -2,6 +2,7 @@
   session_start();
   include("miseEnPage.php"); 
   include("affichelogin.php") ;
+  include("getprogrammation.php") ;
   enTete() ;
     print"<header>\n" ;
     print"<img id=\"baniere\" src=\"banière.jpg\" alt=\"banière twich\" >\n" ;
@@ -24,6 +25,9 @@
     print"</li>\n" ;
     print"</ul>\n" ;
     print"</header>\n" ;
+    print"<section>\n" ;
+    getprogrammation(date('W'),date('N')) ;
+    print"</section>\n" ;
 
 pied() ; 
 ?>
