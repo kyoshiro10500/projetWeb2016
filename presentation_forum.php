@@ -30,6 +30,8 @@
     print"<a href=\"forum.php\" class=\"nolink2\"> Forum >> </a>" ;
     getpost(1);
     print"</section>\n" ;
+    if(!empty($_SESSION['login']))
+    {
     print"<section>\n" ;
     script2() ;
     print"<form action=\"Creepost.php\" method=\"post\" onsubmit=\"return verifForm7(this)\">\n";
@@ -40,5 +42,6 @@
     print"<input type=\"submit\" value=\"Répondre\" name=\"bouton1\"/>\n";
     print"</form>\n";
     print"</section>\n" ;
+    }
 
 ?>
