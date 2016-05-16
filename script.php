@@ -218,6 +218,18 @@ function script2()
                         return false;
                     }
                 }
+                function verifForm8(f)
+                {
+                    var sujetOk = verifSujet(f.sujet) ;
+                    var TextOk = verifText(f.text)
+                    if(TextOk)
+                        return true;
+                    else
+                    {
+                        alert(\"Veuillez remplir correctement tous les champs\");
+                        return false;
+                    }
+                }
            </script>\n") ;
 }
 

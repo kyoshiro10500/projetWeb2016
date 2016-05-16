@@ -1,8 +1,10 @@
 <?php
 	session_start() ;
+	date_default_timezone_set('Europe/Paris') ;
 	$text = pg_escape_string($_POST['text']) ;
 	$text = nl2br($text);
-	$id_forum =$_POST['id_forum'] ;
+	$sujet =pg_escape_string($_POST['sujet']) ;
+	$sujet = nl2br($sujet);
 	$nom_user =$_SESSION['login'] ;
 	$jour = date('d') ;
 	$mois = date('m') ;
@@ -12,12 +14,10 @@
     $reqt=pg_query($base,$requete) ;
     $tuple_courant = pg_fetch_assoc($reqt) ;
     $id_user = $tuple_courant['id_user'] ;
-    $requete="SELECT * FROM forum_post ;";
+    $requete="SELECT * FROM forum ;";
     $reqt=pg_query($base,$requete) ;
     $nbTuple = pg_num_rows($reqt) ;
-    $requete="INSERT INTO forum_post VALUES ($nbTuple + 1,'$id_forum','$id_user','$text','$annee-$mois-$jour') ;";
-    $reqt=pg_query($base,$requete) ;
-    $requete="UPDATE profil SET membre_post = membre_post +1 WHERE id_user='$id_user' ;";
+    $requete="INSERT INTO forum VALUES ($nbTuple + 1,'$id_user','$text','$annee-$mois-$jour','$sujet') ;";
     $reqt=pg_query($base,$requete) ;
     header('Location: forum.php');
 

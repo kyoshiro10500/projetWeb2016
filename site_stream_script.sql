@@ -55,29 +55,25 @@ first_post_topic int not null,
 post_topic int not null
 );*/
 
-CREATE TABLE forum1_post(
-id_post int PRIMARY KEY NOT NULL,
-post_creator int NOT NULL,
-post_texte varchar(250),
-post_time date ,
-CONSTRAINT fk_creator
-FOREIGN KEY (post_creator) REFERENCES profil(id_user));
+CREATE TABLE forum(
+id_forum int PRIMARY KEY,
+forum_creator int NOT NULL,
+forum_texte varchar(250),
+forum_time date ,
+forum_sujet varchar(100)
+) ;
 
-CREATE TABLE forum2_post(
+CREATE TABLE forum_post(
 id_post int PRIMARY KEY NOT NULL,
+id_forum int NOT NULL,
 post_creator int NOT NULL,
 post_texte varchar(250),
 post_time date ,
 CONSTRAINT fk_creator
-FOREIGN KEY (post_creator) REFERENCES profil(id_user));
+FOREIGN KEY (post_creator) REFERENCES profil(id_user),
+CONSTRAINT fk_forum
+FOREIGN KEY (id_forum) REFERENCES forum(id_forum));
 
-CREATE TABLE forum3_post(
-id_post int PRIMARY KEY NOT NULL,
-post_creator int NOT NULL,
-post_texte varchar(250),
-post_time date ,
-CONSTRAINT fk_creator
-FOREIGN KEY (post_creator) REFERENCES profil(id_user));
 
 /*CREATE TABLE moderateur(
 id_mod int,

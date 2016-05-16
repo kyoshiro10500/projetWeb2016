@@ -3,7 +3,7 @@ include("miseEnPage.php");
   include("affichelogin.php") ;
   enTete() ;
     print"<header>\n" ;
-    print"<img id=\"baniere\" src=\"banière.jpg\" alt=\"banière twich\" >\n" ;
+    print"<img id=\"baniere\" src=\"baniere.jpg\" alt=\"banière twich\" >\n" ;
     affichelogin() ;
     print"<ul id=\"onglets\">\n" ;
     print"<li>\n" ;

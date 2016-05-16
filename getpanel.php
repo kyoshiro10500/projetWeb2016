@@ -77,7 +77,7 @@
 					include("getprogramme.php") ;
 					include("getemission.php") ;
 					print"<section id=\"panel\">\n" ;
-					print"<h1>Gestion des émissions (au maximum 20)</h1>\n" ;
+					print"<h1>Gestion des émissions</h1>\n" ;
 					getemission() ;
 					script2() ;
 					print"Création d'émission\n" ;

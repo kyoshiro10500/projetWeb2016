@@ -1,10 +1,11 @@
-<?php //page où le forum est affiché
-session_start();
-  include("miseEnPage.php"); 
-  include("affichelogin.php") ;
-  include("getforum.php") ;
-  include("script.php") ;
-  enTete() ;
+<?php
+	$id_forum=$_GET['variable'];
+	session_start();
+  	include("miseEnPage.php"); 
+  	include("affichelogin.php") ;
+  	include("getpost.php") ;
+  	include("script.php") ;
+  	enTete() ;
     print"<header>\n" ;
     print"<img id=\"baniere\" src=\"baniere.jpg\" alt=\"banière twich\" id=\"banière\">\n" ;
     affichelogin() ;
@@ -27,18 +28,18 @@ session_start();
     print"</ul>\n" ;
     print"</header>\n" ;
     print"<section>\n" ;
-    getforum() ;
+    print"<a href=\"forum.php\" class=\"nolink2\">Forum>>></a>" ;
+    getpost($id_forum) ;
     print"</section>\n" ;
     if(!empty($_SESSION['login']))
     {
     print"<section>\n" ;
     script2() ;
-    print"<form action=\"Creeforum.php\" method=\"post\" onsubmit=\"return verifForm1(this)\">\n";
+    print"<form action=\"Creepost.php\" method=\"post\" onsubmit=\"return verifForm7(this)\">\n";
     print"<br/>\n" ;
-    print"<p>Sujet (6 caractères minimum)</p>" ;
-    print"<input type=\"text\" name=\"sujet\" onblur=\"verifSujet(this)\"><br/><br/>\n" ;
     print"<p>Message (500 caractères maximum)</p>" ;
     print"<textarea cols=\"97\" rows=\"4\" name=\"text\" onblur=\"verifText(this)\"></textarea><br/><br/>\n" ;
+    print"<input type=\"hidden\" name=\"id_forum\" value=\"$id_forum\" />\n" ;
     print"<input type=\"submit\" value=\"Répondre\" name=\"bouton1\"/>\n";
     print"</form>\n";
     print"</section>\n" ;
@@ -46,5 +47,7 @@ session_start();
 
 
 
-pied() ; 
+
+
+
 ?>
