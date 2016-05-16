@@ -35,7 +35,26 @@ textarea {
     resize: none;
 }
 
+.nolink2
+{
+    color : white;
+    text-decoration : none;
+}
+.nolink2:hover
+{
+    color : red;
+}
 
+.nolink
+{
+    color : black;
+    text-decoration : none;
+}
+
+.nolink:hover
+{
+    color : red;
+}
 
 .nopuce
 {

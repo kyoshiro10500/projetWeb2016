@@ -25,30 +25,33 @@
     print"</ul>\n" ;
     print"</header>\n" ;
     print"<section>\n" ;
-    
-    //creation d'un message sur la bdd pour l'user $nom_user 
-    //$text = texte du message
-    //$sujet = sujet du text
-    //$nom_envoi = nom du gens qui a envoyé le message
-
-    //schema classique de connection a bdd
-    //on verifie que $nom_dest existe
-    //on fait une requete insert into ...
-    //on verifie que ça a fonctionné
 
     if(isset($_SESSION['login']))
     {
-        $nom_envoi = $_SESSION['login'] ;
-        $base=pg_connect("host=localhost port=5000 dbname=Site user=postgres password=Site"); 
-        $requete="SELECT * FROM profil WHERE lvl_user = 2 ;";
+        $nom_envoi = pg_escape_string($_SESSION['login']) ;
+        $base=pg_connect("host=localhost port=5000 dbname=Site user=postgres password=Site");
+        $nomdest = pg_escape_string($_POST['nomdest']) ;
+        $requete="SELECT * FROM profil WHERE nom_user = '$nomdest' ;";
         $reqt=pg_query($base,$requete) ;
         $nb_tuples=pg_num_rows($reqt) ;
         $tuple_courant = pg_fetch_assoc($reqt) ;
         if($nb_tuples == 1)
          {
-
-            //Rajouter le code pour l'envoit
-
+            $id_dest = $tuple_courant['id_user'] ;
+            $requete="SELECT * FROM profil WHERE nom_user = '$nom_envoi' ;";
+            $reqt=pg_query($base,$requete) ;
+            $nb_tuples=pg_num_rows($reqt) ;
+            $tuple_courant = pg_fetch_assoc($reqt) ;
+            $id_envoi = $tuple_courant['id_user'] ;
+            $requete="SELECT * FROM messageprive ;";
+            $reqt=pg_query($base,$requete) ;
+            $nb_tuples=pg_num_rows($reqt) ;
+            $message = pg_escape_string($_POST['text']) ;
+            $message = nl2br($message);
+            $sujet = pg_escape_string($_POST['sujet']) ;
+            $requete="INSERT INTO messageprive VALUES ($nb_tuples + 1,'$id_dest','$id_envoi','$message','$sujet') ;";
+            $reqt=pg_query($base,$requete) ;
+            $nb_tuples=pg_num_rows($reqt) ;
             print"<section>\n" ;
             print"Le message a été envoyé\n" ;
             print"</section>\n" ;

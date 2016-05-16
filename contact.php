@@ -32,6 +32,8 @@
     script2() ;
     print"<form action=\"EnvoiMessage.php\" method=\"post\" onsubmit=\"return verifForm1(this)\">\n";
     print"<br/>\n" ;
+    print"<p>Nom du destinataire (6 caractères minimum)</p>" ;
+    print"<input type=\"text\" name=\"nomdest\" onblur=\"verifSujet(this)\"><br/><br/>\n" ;
     print"<p>Sujet (6 caractères minimum)</p>" ;
     print"<input type=\"text\" name=\"sujet\" onblur=\"verifSujet(this)\"><br/><br/>\n" ;
     print"<p>Message (500 caractères maximum)</p>" ;

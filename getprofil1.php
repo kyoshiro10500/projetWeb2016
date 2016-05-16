@@ -1,6 +1,6 @@
 <?php
 
-function getprofil($user)
+function getprofil1($user)
 {
 	$base=pg_connect("host=localhost port=5000 dbname=Site user=postgres password=Site"); 
 	$requete="SELECT * FROM profil WHERE nom_user='$user' ;";
@@ -38,7 +38,7 @@ function getprofil($user)
 			print $tupleCourant['membre_post'] ;
 			print"<br/>\n" ;
 			print"<br/>" ;
-			print"<a href=\"getmp.php\" class=\"nolink2\">Voir les messages privés</a>\n" ;
+			print"<a href=\"profil.php\" class=\"nolink2\">Voir le panel utilisateur</a>\n" ;
 			print"</span>\n" ;
 			print"</section>\n" ;
 		}

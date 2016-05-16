@@ -32,7 +32,11 @@ function getprogrammation($semaine,$jour)
          }
        else
        {
-       		print"<span>Aucune programmation aujourd'hui</span>\n" ;
+            print"<ul id=\"programmation\">\n" ;
+            print"<li class=\"centrage\">\n" ;
+       		print"Aucune programmation aujourd'hui\n" ;
+            print"</li>\n" ;
+            print"</ul>\n" ;
        }
      pg_close( $base );
 }

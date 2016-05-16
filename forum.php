@@ -24,18 +24,23 @@ session_start();
     print"</li>\n" ;
     print"</ul>\n" ;
     print"</header>\n" ;
-    print"<br/>\n" ;
-    print"<ul id=\"forum\">\n" ;
-    print"<li>\n" ;
-    print"Présentation\n" ;
+    print"<section>\n" ;
+    print"<ul id=\"programmation\">\n" ;
+    print"<li class=\"centrage\">\n" ;
+    print"<a href=\"presentation_forum.php\" class=\"nolink\">Présentation\n</a><br/><br/>" ;
+    print"Apprenons à nous connaitre pour mieux pouvoir communiquer\n";
     print"</li>\n" ;
-    print"<li>\n" ;
-    print"Règles générales\n" ;
+    print"<li class=\"centrage\">\n" ;
+    print"<a href=\"regles_forum.php\" class=\"nolink\">Règles générales\n</a><br/><br/>" ;
+    print"Les règles du forum, à lire avant de poster\n";
     print"</li>\n";
-    print"<li>\n";
-    print"Discussions générales\n" ;
+    print"<li class=\"centrage\">\n";
+    print"<a href=\"discussions_forum.php\" class=\"nolink\">Discussions générales</a><br/><br/>\n" ;
+    print"Discutons de tout, de rien !\n";
     print"</li>\n";
     print"</ul>\n" ;
+    print"</section>\n" ;
+
 
 
 pied() ; 

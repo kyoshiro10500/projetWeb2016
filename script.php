@@ -162,9 +162,10 @@ function script2()
                 }
                 function verifForm1(f)
                 {
+                    var nomuserOk = verifSujet(f.nomdest);
                     var SujetOk = verifSujet(f.sujet);
-                    var TextOk = verifText(f.text);
-                    if(SujetOk && TextOk)
+                    var TextOk = verifText(f.text)
+                    if(SujetOk && TextOk && nomuserOk)
                         return true;
                     else
                     {
@@ -199,6 +200,17 @@ function script2()
                 {
                     var nomuserOk = verifSujet(f.nomuser);
                     if(nomuserOk)
+                        return true;
+                    else
+                    {
+                        alert(\"Veuillez remplir correctement tous les champs\");
+                        return false;
+                    }
+                }
+                function verifForm7(f)
+                {
+                    var TextOk = verifText(f.text)
+                    if(TextOk)
                         return true;
                     else
                     {
